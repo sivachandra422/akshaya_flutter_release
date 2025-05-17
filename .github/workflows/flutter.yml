@@ -10,12 +10,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: 'stable'
+
       - run: flutter pub get
       - run: flutter build apk --release
-      - uses: actions/upload-artifact@v3.1.2
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
         with:
           name: akshaya-apk
           path: build/app/outputs/flutter-apk/app-release.apk
