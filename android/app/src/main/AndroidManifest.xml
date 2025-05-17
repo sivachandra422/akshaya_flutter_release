@@ -1,25 +1,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.akshaya.app">
 
-    <application
-        android:name="${applicationName}"
-        android:label="Akshaya"
-        android:icon="@mipmap/ic_launcher">
+  <application
+    android:name="${applicationName}"
+    android:label="Akshaya"
+    android:icon="@mipmap/ic_launcher">
 
-        <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
+    <!-- This line is CRITICAL -->
+    <meta-data
+        android:name="flutterEmbedding"
+        android:value="2" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:theme="@style/LaunchTheme"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:launchMode="singleTop">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+  </application>
 </manifest>
