@@ -18,8 +18,15 @@ jobs:
       - run: flutter pub get
       - run: flutter build apk --release
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v2.3.1
+      - name: Create release
+        uses: softprops/action-gh-release@v1
         with:
-          name: akshaya-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          tag_name: v1.0.${{ github.run_number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload APK to release
+        uses: AButler/upload-release-assets@v2.0
+        with:
+          files: build/app/outputs/flutter-apk/app-release.apk
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
